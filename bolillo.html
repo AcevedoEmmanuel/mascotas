@@ -30,23 +30,20 @@
       </div>
     
       <script>
-        var swiper = new Swiper('.swiper-container', {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          loop: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-
-          direction: 'horizontal', // You can try 'vertical' as well for vertical swiping
-          touchEventsTarget: 'container',
+        document.addEventListener('DOMContentLoaded', function() {
+          var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            direction: 'horizontal',
+            touchEventsTarget: 'container',
+          });
         });
-      </script>
+        </script>
 
       <h2>Detalles basicos</h2>
       <p><strong>Nombre:</strong> Bolillo</p>
