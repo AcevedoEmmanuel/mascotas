@@ -26,18 +26,33 @@
     
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            direction: 'horizontal',
-            touchEventsTarget: 'container',
+            const wrapper = document.querySelector('.carousel-wrapper');
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+            let slide = 0;
+
+            function updateCarousel() {
+              wrapper.style.transform = `translateX(-${slide * 100}%)`;
+            }
+
+            function nextSlide() {
+              if (slide < totalItems - 1) {
+                slide++;
+              } else {
+                slide = 0;
+              }
+              updateCarousel();
+            }
+
+            function prevSlide() {
+              if (slide > 0) {
+                slide--;
+              } else {
+                slide = totalItems - 1;
+              }
+              updateCarousel();
+            }
           });
-        });
         </script>
 
       <h2>Detalles basicos</h2>
