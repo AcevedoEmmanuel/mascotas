@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Bolillo</title>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link  rel="stylesheet" href="styles.css">
@@ -12,43 +13,17 @@
       <h1>Informacion de Bolillo</h1>
       <img src="bolillo.jpg" alt="bolillo">
 
-
-      <h2>Fotografias</h2>
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide "><img src="images/p1.jpeg" alt="p1"></div>
-          <div class="swiper-slide hidden"><img src="image2.jpg" alt="Image 2"></div>
-          <div class="swiper-slide hidden"><img src="image3.jpg" alt="Image 3"></div>
-          <div class="swiper-slide hidden"><img src="image4.jpg" alt="Image 4"></div>
-          <div class="swiper-slide hidden"><img src="image5.jpg" alt="Image 5"></div>
+      <div class="wrapper">
+        
+        <div class="carousel">
+          <img src="images/p1.jpeg" alt="p1">
+          <img src="images/p2.jpeg" alt="p2">
+          <img src="images/p3.jpeg" alt="p3">
+          <img src="images/p4.jpeg" alt="p4">
+          <img src="images/p5.jpeg" alt="p5">
         </div>
       </div>
-    
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1, // Show only one image at a time
-            loop: true,
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            // Enable bidirectional swiping
-            direction: 'horizontal', // You can try 'vertical' as well for vertical swiping
-            touchEventsTarget: 'container', // 'container' by default
-            on: {
-              slideChange: function () {
-              var activeIndex = this.realIndex; // Use realIndex to get the actual index without loop cloning
-              var slides = this.slides;
-              slides.forEach(function (slide) {
-                slide.classList.add('hidden');
-              });
-              slides[activeIndex].classList.remove('hidden');
-              },
-            },
-          });
-        });
-        </script>
+
 
       <h2>Detalles basicos</h2>
       <p><strong>Nombre:</strong> Bolillo</p>
