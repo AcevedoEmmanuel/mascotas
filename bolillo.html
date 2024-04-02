@@ -16,7 +16,7 @@
       <h2>Fotografias</h2>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/p1.jpeg" alt="p1"></div>
+          <div class="swiper-slide active"><img src="images/p1.jpeg" alt="p1"></div>
           <div class="swiper-slide"><img src="images/p2.jpeg" alt="p2"></div>
           <div class="swiper-slide"><img src="images/p3.jpeg" alt="p3"></div>
           <div class="swiper-slide"><img src="images/p4.jpeg" alt="p4"></div>
@@ -26,33 +26,28 @@
     
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const wrapper = document.querySelector('.carousel-wrapper');
-            const items = document.querySelectorAll('.carousel-item');
-            const totalItems = items.length;
-            let slide = 0;
-
-            function updateCarousel() {
-              wrapper.style.transform = `translateX(-${slide * 100}%)`;
-            }
-
-            function nextSlide() {
-              if (slide < totalItems - 1) {
-                slide++;
-              } else {
-                slide = 0;
-              }
-              updateCarousel();
-            }
-
-            function prevSlide() {
-              if (slide > 0) {
-                slide--;
-              } else {
-                slide = totalItems - 1;
-              }
-              updateCarousel();
-            }
+          var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1, // Show only one image at a time
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            // Enable bidirectional swiping
+            direction: 'horizontal', // You can try 'vertical' as well for vertical swiping
+            touchEventsTarget: 'container', // 'container' by default
+            on: {
+              slideChange: function () {
+                var activeIndex = this.activeIndex;
+                var slides = this.slides;
+                slides.forEach(function (slide) {
+                  slide.classList.remove('active');
+                });
+                slides[activeIndex].classList.add('active');
+              },
+            },
           });
+        });
         </script>
 
       <h2>Detalles basicos</h2>
