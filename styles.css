@@ -44,20 +44,20 @@ body {
     opacity: 0.8;
   }
 
-  .carousel-container {
+  .swiper-container {
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    height: 100%;
   }
-  .carousel-wrapper {
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center the image vertically */
     display: flex;
-    transition: transform 0.5s ease;
+    justify-content: center;
+    align-items: center;
   }
-  .carousel-item {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-  .carousel-item img {
+  .swiper-slide img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
   }
